@@ -74,6 +74,10 @@ app.use((err, req, res, next) => {
   res.status(500).send({ success: false, message: "Internal Server Error" });
 });
 
+app.get("/", (req, res) => {
+  res.send("<h1>my name is shoaib khan</h1>");
+});
+
 // Start the server on port 8000
 app.listen(8000, () => {
   console.log("Server is running on port 8000");
