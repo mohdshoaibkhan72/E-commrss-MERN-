@@ -32,15 +32,6 @@ app.use(express.json());
 // Enable CORS
 app.use(cors());
 
-app.use(
-  cors({
-    origin: ["https://deploy.mern-1whq.vercel.app"],
-
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
-
 // Connect to the database
 connectDB();
 
@@ -71,14 +62,10 @@ app.post("/addorder", AddOrder);
 // Global Error Handling Middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send({ success: false, message: "Internal Server Error " });
+  res.status(500).send({ success: false, message: "Internal Server Error" });
 });
-
 app.get("/", (req, res) => {
-  res.send("<h1>my name is shoaib khan</h1>");
-});
-app.get("/shoaib", () => {
-  res.send("this is shoaib side ");
+  res.send("this is / routes hey");
 });
 // Start the server on port 8000
 app.listen(8000, () => {
