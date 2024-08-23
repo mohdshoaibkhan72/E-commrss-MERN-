@@ -49,7 +49,9 @@ const Getproduct = async (req, res) => {
     res.status(200).json({ success: true, products });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ success: false, message: "Internal server error" });
+    res
+      .status(500)
+      .json({ success: false, message: "Internal server error at backend" });
   }
 };
 // Update Product

@@ -80,7 +80,9 @@ const GetCartItems = async (req, res) => {
     res.status(200).json({ success: true, data: cartItems });
   } catch (error) {
     console.error("Error fetching cart items:", error);
-    res.status(500).json({ success: false, message: "Internal Server Error" });
+    res
+      .status(500)
+      .json({ success: false, message: "Internal Server Error at backend" });
   }
 };
 
