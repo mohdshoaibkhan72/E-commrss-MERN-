@@ -1,3 +1,4 @@
+// server.js
 const express = require("express");
 const connectDB = require("./config/DbConnection");
 const cors = require("cors");
@@ -67,7 +68,7 @@ app.use((err, req, res, next) => {
 app.get("/", (req, res) => {
   res.send("this is / routes hey");
 });
-// Start the server on port 8000
 app.listen(8000, () => {
-  console.log("Server is running on port 8000");
+  console.log(`port running at 8000`);
 });
+module.exports = app;
