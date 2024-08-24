@@ -120,7 +120,7 @@ const ProductList = () => {
             <div key={product.productId} className="card cardbox">
               <div>
                 <img
-                  src={`https://e-commers-ury8.onrender.com/${product.productPhoto.filename}`}
+                  src={product.productPhoto.filename}
                   alt={product.productName}
                   className="card-img-top"
                 />
