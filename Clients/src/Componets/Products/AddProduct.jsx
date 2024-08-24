@@ -49,7 +49,7 @@ const AdProductForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/addproduct",
+        "https://e-commers-ury8.onrender.com/addproduct",
         form
       );
       if (response) {

@@ -15,7 +15,9 @@ const CartItemList = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/getcart");
+        const response = await axios.get(
+          "https://e-commers-ury8.onrender.com/getcart"
+        );
         const itemsWithTotalPrice = response.data.data.map((item) => ({
           ...item,
           totalPrice: item.productPrice * item.quantity,
@@ -32,9 +34,12 @@ const CartItemList = () => {
 
   const handleDeleteButton = async (_id) => {
     try {
-      const response = await axios.delete("http://localhost:8000/deletecart", {
-        data: { _id: _id },
-      });
+      const response = await axios.delete(
+        "https://e-commers-ury8.onrender.com/deletecart",
+        {
+          data: { _id: _id },
+        }
+      );
 
       if (response.status === 200) {
         console.log(`Product with ID ${_id} deleted successfully.`);
@@ -101,7 +106,7 @@ const CartItemList = () => {
       };
 
       const response = await axios.post(
-        "http://localhost:8000/addorder",
+        "https://e-commers-ury8.onrender.com/addorder",
         orderData
       );
 

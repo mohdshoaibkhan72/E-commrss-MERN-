@@ -37,7 +37,7 @@ const UpdateProductForm = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:8000/updateProduct/${formData.productId}`,
+        `https://e-commers-ury8.onrender.com/updateProduct/${formData.productId}`,
         formData
       );
 

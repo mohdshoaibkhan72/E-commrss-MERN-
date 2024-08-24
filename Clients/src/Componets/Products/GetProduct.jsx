@@ -16,7 +16,9 @@ const ProductList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/getproducts");
+        const response = await axios.get(
+          "https://e-commers-ury8.onrender.com/getproducts"
+        );
         setProducts(response.data.products || []);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -38,7 +40,9 @@ const ProductList = () => {
       const user = localStorage.getItem("user");
 
       // Fetch the user's cart items
-      const responseGetCart = await axios.get("http://localhost:8000/getcart");
+      const responseGetCart = await axios.get(
+        "https://e-commers-ury8.onrender.com/getcart"
+      );
       const userCart = responseGetCart.data.data;
 
       // Check if the product is already in the cart
@@ -53,7 +57,7 @@ const ProductList = () => {
 
       // Add the product to the cart if it's not already there
       const responseAddToCart = await axios.post(
-        "http://localhost:8000/addcard",
+        "https://e-commers-ury8.onrender.com/addcard",
         {
           productId,
           productPrice,
@@ -81,7 +85,7 @@ const ProductList = () => {
   const handleDeleteButton = async (productId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8000/deleteproduct/${productId}`
+        `https://e-commers-ury8.onrender.com/deleteproduct/${productId}`
       );
 
       if (response.status === 200) {
@@ -116,7 +120,7 @@ const ProductList = () => {
             <div key={product.productId} className="card cardbox">
               <div>
                 <img
-                  src={`http://localhost:8000/images/${product.productPhoto.filename}`}
+                  src={`https://e-commers-ury8.onrender.com/${product.productPhoto.filename}`}
                   alt={product.productName}
                   className="card-img-top"
                 />
