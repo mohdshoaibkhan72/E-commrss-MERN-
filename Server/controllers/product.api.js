@@ -20,6 +20,7 @@ const AddProduct = async (req, res) => {
         .send({ success: false, message: "Please provide all fields" });
     }
 
+    const result = await cloudinary.uploader.upload(req.file.path);
     // Save product
     const productSave = new ProductModel({
       productId,
@@ -27,7 +28,7 @@ const AddProduct = async (req, res) => {
       productPrice,
       productDescription,
       productPhoto: {
-        filename: file.filename,
+        filename: result.secure_url,
       },
     });
 
