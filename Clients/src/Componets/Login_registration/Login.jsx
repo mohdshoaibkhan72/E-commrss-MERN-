@@ -112,6 +112,7 @@ const LoginPage = () => {
                 <button
                   className="btn btn-primary btn1"
                   type="button"
+                  style={{ height: "40px", width: "100px" }} // Add height and width here
                   onClick={toggleShowPassword}
                 >
                   {showPassword ? "Hide" : "Show"}

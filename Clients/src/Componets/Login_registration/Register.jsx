@@ -58,11 +58,14 @@ const RegistrationPage = () => {
 
   return (
     <div className="body">
-      <div className="container">
-        <div className="col-md-6">
+      <div className="container" style={{ height: "100vh", width: "100%" }}>
+        <div className="">
           <div className="text-dark">
             <div className="">
-              <form onSubmit={handleRegistrationSubmit}>
+              <form
+                onSubmit={handleRegistrationSubmit}
+                style={{ height: "650px", width: "420px" }}
+              >
                 <p>Registration Form</p>
 
                 <div className="form-check form-check-inline">
@@ -135,6 +138,7 @@ const RegistrationPage = () => {
                   <button
                     className="btn btn-primary btn1"
                     type="button"
+                    style={{ height: "40px", width: "100px" }}
                     onClick={handleTogglePassword}
                   >
                     {showPassword ? "Hide" : "Show"}
@@ -177,14 +181,6 @@ const RegistrationPage = () => {
                   Already registered? <Link to="/login">Login Here</Link>
                 </p>
               </form>
-
-              <div className="drops">
-                <div className="drop drop-1"></div>
-                <div className="drop drop-2"></div>
-                <div className="drop drop-3"></div>
-                <div className="drop drop-4"></div>
-                <div className="drop drop-5"></div>
-              </div>
             </div>
           </div>
         </div>
